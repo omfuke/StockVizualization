@@ -1,6 +1,10 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+from scrapedData import Open
+
+
+Y1 , X1 = Open()
 
 app = dash.Dash()
 
@@ -9,8 +13,8 @@ app.layout = html.Div(children=[
     dcc.Graph(id = 'example',
               figure={
                   'data':[
-                      {'x':[1,2,3,4,5],'y':[1,5,6,7,3],'type':'line','name':'boats'},
-                      {'x':[1,2,3,4,5],'y':[2,9,3,4,6],'type':'bar','name':'cars'}
+                      {'x':X1,'y':Y1,'type':'line','name':'boats'},
+
                   ],
                   'layout':{
                         'title':'Basic Dash'
